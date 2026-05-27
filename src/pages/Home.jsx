@@ -32,7 +32,7 @@ export const Home = () => (
 
     {/* Hero */}
     <div style={{ position: 'relative', height: 640, overflow: 'hidden' }}>
-      <Stripe label="cinematic race photo · full-bleed" h={640} tone="dark" style={{ position: 'absolute', inset: 0 }} />
+      <img src="/hero.jpg" alt="Formula One race start" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(31,31,39,0.2) 0%, rgba(31,31,39,0.85) 100%)' }} />
       <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '140px 32px 0', color: '#fff' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.7)', marginBottom: 20 }}>
