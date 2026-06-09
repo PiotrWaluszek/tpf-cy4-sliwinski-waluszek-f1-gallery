@@ -3,7 +3,7 @@ import { Footer } from '../components/Footer';
 import { Button } from '../components/Button';
 import { useAuth } from '../context/AuthContext';
 
-const STORAGE_KEY = 'f1_gallery_entries';
+const STORAGE_KEY = 'f1_gallery_entries_v2';
 
 const DEFAULT_ENTRIES = [
   {
