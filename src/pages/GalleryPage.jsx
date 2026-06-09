@@ -9,7 +9,7 @@ const DEFAULT_ENTRIES = [
   {
     id: 1,
     title: 'Monaco Grand Prix 2026 — Start',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/2019_Chinese_Grand_Prix_race_start.jpg/1200px-2019_Chinese_Grand_Prix_race_start.jpg',
+    imageUrl: '/circuits/monaco.jpg',
     category: 'race',
     description: 'Dramatyczny start na ciasnych ulicach Monako — każdy centymetr toru jest na wagę złota.',
     author: 'admin@f1paddock.com',
@@ -18,7 +18,7 @@ const DEFAULT_ENTRIES = [
   {
     id: 2,
     title: 'Pit Stop McLaren — 2 Sekundy',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/McLaren_F1_pit_stop.jpg/1200px-McLaren_F1_pit_stop.jpg',
+    imageUrl: '/circuits/bahrain.jpg',
     category: 'paddock',
     description: 'Perfekcyjnie zsynchronizowana ekipa McLarena wykonuje zmianę opon w ciągu zaledwie dwóch sekund.',
     author: 'admin@f1paddock.com',
@@ -26,8 +26,8 @@ const DEFAULT_ENTRIES = [
   },
   {
     id: 3,
-    title: 'Circuit de Spa-Francorchamps z lotu ptaka',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Spa-Francorchamps_of_Belgium.svg/1200px-Spa-Francorchamps_of_Belgium.svg.png',
+    title: 'Circuit de Spa-Francorchamps',
+    imageUrl: '/circuits/spa.jpg',
     category: 'circuit',
     description: 'Legendarny tor w Ardenach — zielone wzgórza, lasy i jeden z najpiękniejszych układów torów na świecie.',
     author: 'admin@f1paddock.com',
@@ -36,7 +36,7 @@ const DEFAULT_ENTRIES = [
   {
     id: 4,
     title: 'Kimi Antonelli — Mistrz 2026',
-    imageUrl: 'https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/d_common:f1:2026:fallback:driver:2026fallbackdriverright.webp/v1740000001/common/f1/2026/mercedes/andant01/2026mercedesandant01right.webp',
+    imageUrl: '/drivers/russell.jpg',
     category: 'driver',
     description: 'Kimi Antonelli — 18-letnia sensacja Mercedes prowadząca klasyfikację generalną 2026 z pięcioma kolejnymi zwycięstwami.',
     author: 'admin@f1paddock.com',
@@ -45,7 +45,7 @@ const DEFAULT_ENTRIES = [
   {
     id: 5,
     title: 'Lewis Hamilton — Ferrari 2026',
-    imageUrl: 'https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/d_common:f1:2026:fallback:driver:2026fallbackdriverright.webp/v1740000001/common/f1/2026/ferrari/lewham01/2026ferrarilewham01right.webp',
+    imageUrl: '/drivers/hamilton.jpg',
     category: 'driver',
     description: 'Siedmiokrotny mistrz świata w czerwonym kombinezonie. Hamilton wygrał Grand Prix Arabii Saudyjskiej 2026 i prowadzi klasyfikację Ferrari.',
     author: 'admin@f1paddock.com',
@@ -54,7 +54,7 @@ const DEFAULT_ENTRIES = [
   {
     id: 6,
     title: 'Monza — Świątynia Prędkości',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Monza_track_map.svg/1200px-Monza_track_map.svg.png',
+    imageUrl: '/circuits/monza.jpg',
     category: 'circuit',
     description: 'Autodromo Nazionale Monza — najszybszy tor w kalendarzu Formuły 1, otoczony lasem parkowym.',
     author: 'admin@f1paddock.com',
@@ -63,7 +63,7 @@ const DEFAULT_ENTRIES = [
   {
     id: 7,
     title: 'Podium Australii 2026 — Antonelli, Russell, Hamilton',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/2013_British_Grand_Prix_Podium.jpg/1200px-2013_British_Grand_Prix_Podium.jpg',
+    imageUrl: '/circuits/melbourne.jpg',
     category: 'race',
     description: 'Podwójne podium Mercedes — Antonelli wygrywa, Russell drugi, Hamilton trzeci. Dominacja srebrnych strzał.',
     author: 'admin@f1paddock.com',
@@ -72,7 +72,7 @@ const DEFAULT_ENTRIES = [
   {
     id: 8,
     title: 'George Russell — Kwalifikacje Monaco',
-    imageUrl: 'https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/d_common:f1:2026:fallback:driver:2026fallbackdriverright.webp/v1740000001/common/f1/2026/mercedes/georus01/2026mercedesgeorus01right.webp',
+    imageUrl: '/drivers/norris.jpg',
     category: 'driver',
     description: 'George Russell w kwalifikacjach do Grand Prix Monako — tor, na którym milimetry decydują o pozycji na starcie.',
     author: 'admin@f1paddock.com',
@@ -81,7 +81,7 @@ const DEFAULT_ENTRIES = [
   {
     id: 9,
     title: 'Silverstone Circuit — Mapa Toru',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Silverstone_Circuit_2010.svg/1200px-Silverstone_Circuit_2010.svg.png',
+    imageUrl: '/circuits/austria.jpg',
     category: 'circuit',
     description: 'Kolebka Mistrzostw Świata F1 — Silverstone od 1950 roku. Copse, Maggotts, Becketts — najszybsze zakręty w motorsporcie.',
     author: 'admin@f1paddock.com',
@@ -90,7 +90,7 @@ const DEFAULT_ENTRIES = [
   {
     id: 10,
     title: 'Lando Norris — Bahrajn 2026 (Zwycięstwo)',
-    imageUrl: 'https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/d_common:f1:2026:fallback:driver:2026fallbackdriverright.webp/v1740000001/common/f1/2026/mclaren/lannor01/2026mclarenlannor01right.webp',
+    imageUrl: '/drivers/norris.jpg',
     category: 'race',
     description: 'Lando Norris świętuje pierwsze zwycięstwo sezonu 2026 w Bahrajnie — McLaren wraca na szczyt podium.',
     author: 'admin@f1paddock.com',
