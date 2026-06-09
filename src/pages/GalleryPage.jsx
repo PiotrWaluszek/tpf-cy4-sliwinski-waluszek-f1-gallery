@@ -3,13 +3,13 @@ import { Footer } from '../components/Footer';
 import { Button } from '../components/Button';
 import { useAuth } from '../context/AuthContext';
 
-const STORAGE_KEY = 'f1_gallery_entries_v2';
+const STORAGE_KEY = 'f1_gallery_entries_v4';
 
 const DEFAULT_ENTRIES = [
   {
     id: 1,
     title: 'Monaco Grand Prix 2026 — Start',
-    imageUrl: '/circuits/monaco.jpg',
+    imageUrl: '/circuits/monaco.svg',
     category: 'race',
     description: 'Dramatyczny start na ciasnych ulicach Monako — każdy centymetr toru jest na wagę złota.',
     author: 'admin@f1paddock.com',
@@ -27,7 +27,7 @@ const DEFAULT_ENTRIES = [
   {
     id: 3,
     title: 'Circuit de Spa-Francorchamps',
-    imageUrl: '/circuits/spa.jpg',
+    imageUrl: '/circuits/spa.svg',
     category: 'circuit',
     description: 'Legendarny tor w Ardenach — zielone wzgórza, lasy i jeden z najpiękniejszych układów torów na świecie.',
     author: 'admin@f1paddock.com',
@@ -63,7 +63,7 @@ const DEFAULT_ENTRIES = [
   {
     id: 7,
     title: 'Podium Australii 2026 — Antonelli, Russell, Hamilton',
-    imageUrl: '/circuits/melbourne.jpg',
+    imageUrl: '/circuits/melbourne.svg',
     category: 'race',
     description: 'Podwójne podium Mercedes — Antonelli wygrywa, Russell drugi, Hamilton trzeci. Dominacja srebrnych strzał.',
     author: 'admin@f1paddock.com',
@@ -72,7 +72,7 @@ const DEFAULT_ENTRIES = [
   {
     id: 8,
     title: 'George Russell — Kwalifikacje Monaco',
-    imageUrl: '/drivers/norris.jpg',
+    imageUrl: '/drivers/russell.jpg',
     category: 'driver',
     description: 'George Russell w kwalifikacjach do Grand Prix Monako — tor, na którym milimetry decydują o pozycji na starcie.',
     author: 'admin@f1paddock.com',
