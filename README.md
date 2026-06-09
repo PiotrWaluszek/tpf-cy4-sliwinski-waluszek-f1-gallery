@@ -2,7 +2,7 @@
 
 Projekt zaliczeniowy z przedmiotu **Techniki Projektowania Frontendowego**, Politechnika Krakowska, 2026.
 
-**Autorzy:** Piotr Waluszek, Śliwiński
+**Autorzy:** Piotr Waluszek, Krzysztof Śliwiński
 
 **Deploy:** https://tpf-cy4-sliwinski-waluszek-f1-galle.vercel.app
 
