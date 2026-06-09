@@ -2,29 +2,15 @@ import { useState } from 'react';
 import { Flag } from '../components/Flag';
 import { Footer } from '../components/Footer';
 import { raceResults, wccStandings } from '../data/results';
-import { circuits } from '../data/circuits';
-
-const flagForCountry = name => {
-  const map = {
-    'Bahrain': ['#CE1126','#fff',null], 'Saudi Arabia': ['#006C35','#fff',null],
-    'Australia': ['#00008B','#fff','#FF0000'], 'Japan': ['#fff','#BC002D',null],
-    'China': ['#DE2910','#FFDE00',null], 'USA': ['#B22234','#fff','#3C3B6E'],
-    'Italy': ['#009246','#fff','#CE2B37'], 'Monaco': ['#CE1126','#fff',null],
-    'Canada': ['#FF0000','#fff',null], 'Spain': ['#AA151B','#F1BF00','#AA151B'],
-  };
-  return map[name] || ['#ccc','#fff',null];
-};
 
 const RaceDetailModal = ({ race, onClose }) => {
-  const circ = circuits.find(c => c.name.toLowerCase().includes(race.circuit.toLowerCase()) || race.circuit.toLowerCase().includes(c.location.toLowerCase()));
-  const [f1, f2, f3] = flagForCountry(circ?.country || '');
   return (
     <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24, overflowY: 'auto' }}>
       <div onClick={e => e.stopPropagation()} style={{ background: 'var(--bg)', borderRadius: 16, maxWidth: 640, width: '100%', overflow: 'hidden', boxShadow: '0 24px 80px rgba(0,0,0,0.3)', margin: 'auto' }}>
         <div style={{ background: '#1F1F27', padding: '28px 32px', position: 'relative' }}>
           <button onClick={onClose} style={{ position: 'absolute', top: 16, right: 20, background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)', cursor: 'pointer', fontSize: 22, lineHeight: 1 }}>×</button>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-            <Flag a={f1} b={f2} c={f3} />
+            <Flag code={race.natCode} />
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Round {race.round} · {race.date}</span>
           </div>
           <div style={{ fontSize: 26, fontWeight: 700, color: '#fff', letterSpacing: '-0.02em', marginBottom: 4 }}>{race.name}</div>
@@ -101,10 +87,7 @@ export const ResultsPage = () => {
       <div style={{ padding: '40px 32px 96px', maxWidth: 1200, margin: '0 auto' }}>
         {tab === 'races' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            {raceResults.map(race => {
-              const circ = circuits.find(c => c.name.toLowerCase().includes(race.circuit.toLowerCase()) || race.circuit.toLowerCase().includes(c.location.toLowerCase()));
-              const [f1, f2, f3] = flagForCountry(circ?.country || '');
-              return (
+            {raceResults.map(race => (
                 <div key={race.round} onClick={() => setSelected(race)}
                   style={{ background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 12, padding: '20px 24px', cursor: 'pointer', transition: 'all .2s', display: 'grid', gridTemplateColumns: '60px 1fr auto auto', alignItems: 'center', gap: 20 }}
                   onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'; e.currentTarget.style.transform = 'translateX(4px)'; }}
@@ -116,7 +99,7 @@ export const ResultsPage = () => {
                   </div>
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                      <Flag a={f1} b={f2} c={f3} />
+                      <Flag code={race.natCode} />
                       <span style={{ fontSize: 12, color: 'var(--muted)' }}>{race.date}</span>
                     </div>
                     <div style={{ fontSize: 18, fontWeight: 600, letterSpacing: '-0.01em', marginBottom: 2 }}>{race.name}</div>
@@ -132,8 +115,7 @@ export const ResultsPage = () => {
                   </div>
                   <div style={{ fontSize: 12, color: 'var(--accent)', fontWeight: 500 }}>Szczegóły →</div>
                 </div>
-              );
-            })}
+            ))}
           </div>
         )}
 

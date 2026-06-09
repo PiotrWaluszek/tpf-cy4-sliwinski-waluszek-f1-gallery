@@ -26,16 +26,16 @@ export const Nav = () => {
 
   return (
     <nav style={{
-      height: 56, display: 'flex', alignItems: 'center', padding: '0 32px',
+      height: 68, display: 'flex', alignItems: 'center', padding: '0 40px',
       background: 'var(--bg)', borderBottom: '1px solid var(--border)',
       position: 'sticky', top: 0, zIndex: 100,
     }}>
-      <Link to="/" style={{ display: 'flex', alignItems: 'baseline', gap: 6, fontWeight: 700, fontSize: 17, letterSpacing: '-0.01em', color: 'var(--fg)', textDecoration: 'none', flexShrink: 0 }}>
-        F1 Paddock
-        <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent)', display: 'inline-block', transform: 'translateY(-2px)' }} />
+      <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 800, fontSize: 19, letterSpacing: '-0.02em', color: 'var(--fg)', textDecoration: 'none', flexShrink: 0 }}>
+        <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 28, height: 28, borderRadius: 6, background: 'var(--accent)', color: '#fff', fontSize: 13, fontWeight: 900, letterSpacing: '-0.04em' }}>F1</span>
+        Paddock
       </Link>
 
-      <div style={{ flex: 1, display: 'flex', justifyContent: 'center', gap: 32, fontSize: 14 }}>
+      <div style={{ flex: 1, display: 'flex', justifyContent: 'center', gap: 36, fontSize: 14 }}>
         {links.map(({ label, to }) => {
           const active = pathname === to;
           return (
@@ -43,9 +43,10 @@ export const Nav = () => {
               fontWeight: active ? 600 : 400,
               color: active ? 'var(--fg)' : 'var(--muted)',
               borderBottom: active ? '2px solid var(--accent)' : '2px solid transparent',
-              padding: '18px 0',
+              padding: '23px 0',
               textDecoration: 'none',
               whiteSpace: 'nowrap',
+              fontSize: 14,
             }}>{label}</Link>
           );
         })}

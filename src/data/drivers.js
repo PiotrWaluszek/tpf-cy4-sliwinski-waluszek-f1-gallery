@@ -1,37 +1,40 @@
 export const teams = [
-  { name: 'Red Bull Racing', color: '#1E3A8A' },
-  { name: 'McLaren', color: '#FF8000' },
-  { name: 'Ferrari', color: '#DC0000' },
-  { name: 'Mercedes', color: '#00A19C' },
-  { name: 'Aston Martin', color: '#006F62' },
-  { name: 'Alpine', color: '#0090FF' },
-  { name: 'Williams', color: '#005AFF' },
-  { name: 'Haas', color: '#B6BABD' },
-  { name: 'Kick Sauber', color: '#52E252' },
-  { name: 'RB', color: '#6692FF' },
+  { name: 'Red Bull Racing', color: '#1E3A8A' },   // 0
+  { name: 'McLaren',         color: '#FF8000' },   // 1
+  { name: 'Ferrari',         color: '#DC0000' },   // 2
+  { name: 'Mercedes',        color: '#00A19C' },   // 3
+  { name: 'Aston Martin',    color: '#006F62' },   // 4
+  { name: 'Alpine',          color: '#0090FF' },   // 5
+  { name: 'Williams',        color: '#005AFF' },   // 6
+  { name: 'Haas',            color: '#B6BABD' },   // 7
+  { name: 'Audi',            color: '#BB1832' },   // 8
+  { name: 'Racing Bulls',    color: '#6692FF' },   // 9
+  { name: 'Cadillac',        color: '#1A1A2E' },   // 10
 ];
 
 export const drivers = [
-  { pos: 1,  name: 'Max Verstappen',    number: '1',  teamIdx: 0, nat: 'NED', flagA: '#AE1C28', flagB: '#fff', flagC: '#21468B', points: 374, wins: 9,  podiums: 15, bio: 'Reigning four-time World Champion. Dominant force in modern Formula One.' },
-  { pos: 2,  name: 'Lando Norris',      number: '4',  teamIdx: 1, nat: 'GBR', flagA: '#012169', flagB: '#fff', flagC: '#C8102E', points: 302, wins: 4,  podiums: 13, bio: 'Charismatic McLaren lead driver with race-winning pace throughout the season.' },
-  { pos: 3,  name: 'Oscar Piastri',     number: '81', teamIdx: 1, nat: 'AUS', flagA: '#00008B', flagB: '#fff', flagC: '#FF0000', points: 278, wins: 2,  podiums: 10, bio: 'Quiet but devastatingly quick, the Australian is McLaren\'s rising star.' },
-  { pos: 4,  name: 'Charles Leclerc',   number: '16', teamIdx: 2, nat: 'MON', flagA: '#CE1126', flagB: '#fff', flagC: null,       points: 262, wins: 3,  podiums: 11, bio: 'Ferrari\'s talismanic driver — spectacular in Monaco and on street circuits.' },
-  { pos: 5,  name: 'Carlos Sainz',      number: '55', teamIdx: 2, nat: 'ESP', flagA: '#AA151B', flagB: '#F1BF00', flagC: '#AA151B', points: 228, wins: 1, podiums: 8,  bio: 'Consistent and clinical, Sainz is among the grid\'s most complete drivers.' },
-  { pos: 6,  name: 'George Russell',    number: '63', teamIdx: 3, nat: 'GBR', flagA: '#012169', flagB: '#fff', flagC: '#C8102E', points: 192, wins: 1,  podiums: 5,  bio: 'Mercedes team leader, known for extracting maximum performance in any conditions.' },
-  { pos: 7,  name: 'Lewis Hamilton',    number: '44', teamIdx: 3, nat: 'GBR', flagA: '#012169', flagB: '#fff', flagC: '#C8102E', points: 178, wins: 0,  podiums: 4,  bio: 'Seven-time World Champion. One of the greatest drivers in the history of the sport.' },
-  { pos: 8,  name: 'Sergio Pérez',      number: '11', teamIdx: 0, nat: 'MEX', flagA: '#006847', flagB: '#fff', flagC: '#CE1126', points: 152, wins: 0,  podiums: 3,  bio: 'Experienced Red Bull number two, known for saving tyres and consistent points finishes.' },
-  { pos: 9,  name: 'Fernando Alonso',   number: '14', teamIdx: 4, nat: 'ESP', flagA: '#AA151B', flagB: '#F1BF00', flagC: '#AA151B', points: 92, wins: 0, podiums: 1,  bio: 'Two-time champion still competing at the very top in his forties. Relentless competitor.' },
-  { pos: 10, name: 'Lance Stroll',      number: '18', teamIdx: 4, nat: 'CAN', flagA: '#FF0000', flagB: '#fff', flagC: null,       points: 64,  wins: 0,  podiums: 0,  bio: 'Aston Martin\'s consistent scorer, particularly strong in mixed conditions.' },
-  { pos: 11, name: 'Pierre Gasly',      number: '10', teamIdx: 5, nat: 'FRA', flagA: '#002654', flagB: '#fff', flagC: '#CE1126', points: 42,  wins: 0,  podiums: 0,  bio: 'Talented Frenchman who scored a surprise Italian GP victory with AlphaTauri in 2020.' },
-  { pos: 12, name: 'Esteban Ocon',      number: '31', teamIdx: 5, nat: 'FRA', flagA: '#002654', flagB: '#fff', flagC: '#CE1126', points: 33,  wins: 0,  podiums: 0,  bio: 'Alpine\'s second driver, former Monaco GP winner with a tenacious racing style.' },
-  { pos: 13, name: 'Alex Albon',        number: '23', teamIdx: 6, nat: 'THA', flagA: '#A51931', flagB: '#F4F5F8', flagC: '#2D2A4A', points: 28,  wins: 0,  podiums: 0,  bio: 'Williams team leader, beloved by fans and often outperforms the machinery under him.' },
-  { pos: 14, name: 'Logan Sargeant',    number: '2',  teamIdx: 6, nat: 'USA', flagA: '#B22234', flagB: '#fff', flagC: '#3C3B6E', points: 8,   wins: 0,  podiums: 0,  bio: 'The American driver pushing hard to make his mark in Formula One.' },
-  { pos: 15, name: 'Kevin Magnussen',   number: '20', teamIdx: 7, nat: 'DEN', flagA: '#C60C30', flagB: '#fff', flagC: null,       points: 18,  wins: 0,  podiums: 0,  bio: 'Fan favourite known for hard racing and memorable battles throughout his career.' },
-  { pos: 16, name: 'Nico Hülkenberg',   number: '27', teamIdx: 7, nat: 'DEU', flagA: '#000000', flagB: '#DD0000', flagC: '#FFCE00', points: 22,  wins: 0,  podiums: 0,  bio: 'Experienced veteran returning to F1, widely considered one of the fastest drivers without a win.' },
-  { pos: 17, name: 'Valtteri Bottas',   number: '77', teamIdx: 8, nat: 'FIN', flagA: '#003580', flagB: '#fff', flagC: '#003580', points: 12,  wins: 0,  podiums: 0,  bio: 'Former Mercedes man now spearheading Kick Sauber\'s development programme.' },
-  { pos: 18, name: 'Zhou Guanyu',       number: '24', teamIdx: 8, nat: 'CHN', flagA: '#DE2910', flagB: '#FFDE00', flagC: null,      points: 9,   wins: 0,  podiums: 0,  bio: 'China\'s first F1 driver, steadily building experience at Kick Sauber.' },
-  { pos: 19, name: 'Yuki Tsunoda',      number: '22', teamIdx: 9, nat: 'JPN', flagA: '#FFFFFF', flagB: '#BC002D', flagC: null,      points: 31,  wins: 0,  podiums: 0,  bio: 'Rapid Japanese driver known for expressive radio messages and electrifying one-lap pace.' },
-  { pos: 20, name: 'Daniel Ricciardo',  number: '3',  teamIdx: 9, nat: 'AUS', flagA: '#00008B', flagB: '#fff', flagC: '#FF0000', points: 14,  wins: 0,  podiums: 0,  bio: 'Eight-time race winner and fan favourite, the Honey Badger is never short of a smile.' },
+  { pos: 1,  name: 'Kimi Antonelli',    number: '12', teamIdx: 3,  nat: 'ITA', natCode: 'it', flagA: '#009246', flagB: '#fff', flagC: '#CE2B37', points: 156, wins: 5, podiums: 6,  bio: 'Mercedes\' teenage sensation leading the 2026 championship with five consecutive wins. The new power unit regulations have been perfectly tailored around his smooth, clinical driving style.' },
+  { pos: 2,  name: 'Lewis Hamilton',    number: '44', teamIdx: 2,  nat: 'GBR', natCode: 'gb', flagA: '#012169', flagB: '#fff', flagC: '#C8102E', points: 90,  wins: 1, podiums: 4,  bio: 'Seven-time champion now in red. Hamilton won the season-opening Australian Grand Prix and leads Ferrari\'s championship challenge behind the dominant Antonelli.' },
+  { pos: 3,  name: 'George Russell',    number: '63', teamIdx: 3,  nat: 'GBR', natCode: 'gb', flagA: '#012169', flagB: '#fff', flagC: '#C8102E', points: 88,  wins: 0, podiums: 2,  bio: 'Mercedes\' second driver and championship outsider — consistent, composed and fully capable of capitalising on any slip from his team-mate.' },
+  { pos: 4,  name: 'Charles Leclerc',   number: '16', teamIdx: 2,  nat: 'MON', natCode: 'mc', flagA: '#CE1126', flagB: '#fff', flagC: null,       points: 75,  wins: 0, podiums: 2,  bio: 'Ferrari\'s second driver hunting the top. Leclerc\'s qualifying pace on street circuits remains world-class, but reliability has cost him critical points in 2026.' },
+  { pos: 5,  name: 'Oscar Piastri',     number: '81', teamIdx: 1,  nat: 'AUS', natCode: 'au', flagA: '#00008B', flagB: '#fff', flagC: '#FF0000', points: 60,  wins: 0, podiums: 2,  bio: 'Piastri\'s ice-cold racecraft makes him McLaren\'s most consistent scorer in 2026, with the team still searching for their first win of the new era.' },
+  { pos: 6,  name: 'Lando Norris',      number: '4',  teamIdx: 1,  nat: 'GBR', natCode: 'gb', flagA: '#012169', flagB: '#fff', flagC: '#C8102E', points: 58,  wins: 0, podiums: 1,  bio: 'McLaren\'s talisman has found the 2026 regulations trickier than expected. Still capable of sensational pace, Norris is hungry to close the gap to Antonelli.' },
+  { pos: 7,  name: 'Max Verstappen',    number: '1',  teamIdx: 0,  nat: 'NED', natCode: 'nl', flagA: '#AE1C28', flagB: '#fff', flagC: '#21468B', points: 43,  wins: 0, podiums: 0,  bio: 'Four-time World Champion enduring a difficult start to the new 2026 regulations. Red Bull\'s power unit deficit is keeping even Verstappen well outside the top six.' },
+  { pos: 8,  name: 'Isack Hadjar',      number: '6',  teamIdx: 0,  nat: 'FRA', natCode: 'fr', flagA: '#002654', flagB: '#fff', flagC: '#CE1126', points: 29,  wins: 0, podiums: 0,  bio: 'Promoted from Racing Bulls to Red Bull for 2026. The French-Algerian driver has shown promising speed and has outscored Verstappen on several occasions early in the season.' },
+  { pos: 9,  name: 'Liam Lawson',       number: '30', teamIdx: 9,  nat: 'NZL', natCode: 'nz', flagA: '#000000', flagB: '#fff', flagC: '#00247D', points: 26,  wins: 0, podiums: 0,  bio: 'Back at Racing Bulls after his Red Bull stint. The Kiwi brings consistent scoring and raw pace to the Milton Keynes junior outfit.' },
+  { pos: 10, name: 'Pierre Gasly',      number: '10', teamIdx: 5,  nat: 'FRA', natCode: 'fr', flagA: '#002654', flagB: '#fff', flagC: '#CE1126', points: 26,  wins: 0, podiums: 0,  bio: 'Experienced Alpine lead driver committed to the team until at least 2028. Alpine\'s switch to Mercedes power has been a significant step forward.' },
+  { pos: 11, name: 'Oliver Bearman',    number: '87', teamIdx: 7,  nat: 'GBR', natCode: 'gb', flagA: '#012169', flagB: '#fff', flagC: '#C8102E', points: 18,  wins: 0, podiums: 0,  bio: 'Haas\' young British star in his first full season. Bearman is extracting everything from a midfield package with impressive maturity beyond his years.' },
+  { pos: 12, name: 'Franco Colapinto',  number: '43', teamIdx: 5,  nat: 'ARG', natCode: 'ar', flagA: '#74ACDF', flagB: '#fff', flagC: '#F6B40E', points: 15,  wins: 0, podiums: 0,  bio: 'Argentina\'s fearless racer moved from Williams to Alpine for 2026. His ferocious overtaking and zero fear of contact make him a genuine crowd favourite.' },
+  { pos: 13, name: 'Arvid Lindblad',    number: '2',  teamIdx: 9,  nat: 'GBR', natCode: 'gb', flagA: '#012169', flagB: '#fff', flagC: '#C8102E', points: 13,  wins: 0, podiums: 0,  bio: 'The youngest driver on the 2026 grid. Britain\'s hottest prospect became the youngest F2 race winner in history before earning his Red Bull-backed Racing Bulls seat.' },
+  { pos: 14, name: 'Carlos Sainz',      number: '55', teamIdx: 6,  nat: 'ESP', natCode: 'es', flagA: '#AA151B', flagB: '#F1BF00', flagC: '#AA151B', points: 6,  wins: 0, podiums: 0,  bio: 'Williams\' experienced leader alongside Albon. The 2026 regulations have been tough on the team, but Sainz\'s consistency and racecraft keep the points coming.' },
+  { pos: 15, name: 'Alexander Albon',   number: '23', teamIdx: 6,  nat: 'THA', natCode: 'th', flagA: '#A51931', flagB: '#fff', flagC: '#2D2A4A', points: 5,   wins: 0, podiums: 0,  bio: 'In his fifth season with Williams, Albon remains one of the grid\'s most underrated performers — exceptional at extracting performance from a limited package.' },
+  { pos: 16, name: 'Esteban Ocon',      number: '31', teamIdx: 7,  nat: 'FRA', natCode: 'fr', flagA: '#002654', flagB: '#fff', flagC: '#CE1126', points: 3,   wins: 0, podiums: 0,  bio: 'Veteran French driver bringing hard-won experience to Haas\' 2026 campaign. Ocon\'s racecraft in unpredictable conditions has been key to the team\'s points haul.' },
+  { pos: 17, name: 'Gabriel Bortoleto', number: '5',  teamIdx: 8,  nat: 'BRA', natCode: 'br', flagA: '#009C3B', flagB: '#FFDF00', flagC: '#002776', points: 2, wins: 0, podiums: 0,  bio: '2024 F2 champion showing blistering speed in his Audi debut season. The Brazilian prodigy is clearly built for the very top of Formula 1.' },
+  { pos: 18, name: 'Fernando Alonso',   number: '14', teamIdx: 4,  nat: 'ESP', natCode: 'es', flagA: '#AA151B', flagB: '#F1BF00', flagC: '#AA151B', points: 1, wins: 0, podiums: 0,  bio: 'At 44, still one of the most determined racers on the grid. Alonso fights Aston Martin\'s difficult start to the new era with trademark grit and tactical brilliance.' },
+  { pos: 19, name: 'Nico Hülkenberg',   number: '27', teamIdx: 8,  nat: 'DEU', natCode: 'de', flagA: '#000000', flagB: '#DD0000', flagC: '#FFCE00', points: 0, wins: 0, podiums: 0,  bio: 'Spearheading Audi\'s F1 comeback. The experienced German is central to the manufacturer\'s steep learning curve as they build toward their own power unit debut.' },
+  { pos: 20, name: 'Valtteri Bottas',   number: '77', teamIdx: 10, nat: 'FIN', natCode: 'fi', flagA: '#003580', flagB: '#fff', flagC: null,       points: 0,  wins: 0, podiums: 0,  bio: 'Ten-time GP winner returning to the grid with debutant Cadillac. Bottas brings unparalleled experience to help build the American manufacturer\'s first F1 team from scratch.' },
+  { pos: 21, name: 'Sergio Pérez',      number: '11', teamIdx: 10, nat: 'MEX', natCode: 'mx', flagA: '#006847', flagB: '#fff', flagC: '#CE1126', points: 0,  wins: 0, podiums: 0,  bio: 'Six-time GP winner making an F1 comeback with Cadillac after departing Red Bull. The Mexican fan favourite brings vital race-winning experience to the fledgling American team.' },
+  { pos: 22, name: 'Lance Stroll',      number: '18', teamIdx: 4,  nat: 'CAN', natCode: 'ca', flagA: '#FF0000', flagB: '#fff', flagC: null,       points: 0,  wins: 0, podiums: 0,  bio: 'Aston Martin\'s consistent scorer, particularly strong in mixed conditions. Stroll is working hard to extract every point from a car yet to reach its 2026 potential.' },
 ];
 
 export const wdcStandings = drivers;

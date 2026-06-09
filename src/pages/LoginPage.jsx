@@ -16,8 +16,8 @@ const Field = ({ label, type, value, onChange, placeholder }) => (
       onChange={e => onChange(e.target.value)}
       placeholder={placeholder}
       style={{
-        padding: '11px 14px', borderRadius: 10, border: '1px solid var(--border)',
-        fontSize: 15, fontFamily: 'inherit', color: 'var(--fg)', background: 'var(--bg)',
+        padding: '13px 16px', borderRadius: 10, border: '1px solid var(--border)',
+        fontSize: 16, fontFamily: 'inherit', color: 'var(--fg)', background: 'var(--bg)',
         outline: 'none', transition: 'border-color .15s',
       }}
       onFocus={e => (e.target.style.borderColor = 'var(--accent)')}
@@ -73,21 +73,21 @@ export const LoginPage = () => {
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--alt-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
-      <div style={{ width: '100%', maxWidth: 420 }}>
+      <div style={{ width: '100%', maxWidth: 520 }}>
 
         {/* Logo */}
-        <div style={{ textAlign: 'center', marginBottom: 40 }}>
-          <Link to="/" style={{ display: 'inline-flex', alignItems: 'baseline', gap: 6, fontWeight: 700, fontSize: 22, color: 'var(--fg)', textDecoration: 'none' }}>
+        <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <Link to="/" style={{ display: 'inline-flex', alignItems: 'baseline', gap: 7, fontWeight: 700, fontSize: 28, color: 'var(--fg)', textDecoration: 'none' }}>
             F1 Paddock
-            <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--accent)', display: 'inline-block', transform: 'translateY(-2px)' }} />
+            <span style={{ width: 9, height: 9, borderRadius: '50%', background: 'var(--accent)', display: 'inline-block', transform: 'translateY(-2px)' }} />
           </Link>
-          <div style={{ marginTop: 10, fontSize: 14, color: 'var(--muted)' }}>
+          <div style={{ marginTop: 12, fontSize: 16, color: 'var(--muted)' }}>
             {mode === 'login' ? 'Zaloguj się, by zarządzać galerią' : 'Utwórz nowe konto'}
           </div>
         </div>
 
         {/* Card */}
-        <div style={{ background: 'var(--bg)', borderRadius: 16, border: '1px solid var(--border)', padding: '36px 32px', boxShadow: '0 4px 24px rgba(0,0,0,0.06)' }}>
+        <div style={{ background: 'var(--bg)', borderRadius: 20, border: '1px solid var(--border)', padding: '48px 44px', boxShadow: '0 8px 40px rgba(0,0,0,0.10)' }}>
 
           {/* Mode tabs */}
           <div style={{ display: 'flex', marginBottom: 28, background: 'var(--alt-bg)', borderRadius: 10, padding: 4, gap: 4 }}>
@@ -104,7 +104,7 @@ export const LoginPage = () => {
             ))}
           </div>
 
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             <Field label="Adres e-mail" type="email" value={email} onChange={setEmail} placeholder="twoj@email.com" />
             <Field label="Hasło" type="password" value={password} onChange={setPassword} placeholder={mode === 'register' ? 'Minimum 6 znaków' : '••••••••'} />
 
@@ -118,8 +118,8 @@ export const LoginPage = () => {
               type="submit"
               disabled={loading || !email || !password}
               style={{
-                padding: '13px', borderRadius: 999, border: 'none', cursor: loading || !email || !password ? 'not-allowed' : 'pointer',
-                background: 'var(--accent)', color: '#fff', fontSize: 15, fontWeight: 600,
+                padding: '16px', borderRadius: 999, border: 'none', cursor: loading || !email || !password ? 'not-allowed' : 'pointer',
+                background: 'var(--accent)', color: '#fff', fontSize: 16, fontWeight: 600,
                 fontFamily: 'inherit', opacity: loading || !email || !password ? 0.6 : 1,
                 transition: 'opacity .15s', marginTop: 4,
               }}

@@ -2,7 +2,7 @@ import { Flag } from '../components/Flag';
 import { Footer } from '../components/Footer';
 import { teams, wdcStandings } from '../data/drivers';
 
-const StandingRow = ({ pos, name, teamIdx, flagA, flagB, flagC, points, wins, podiums, leader }) => {
+const StandingRow = ({ pos, name, teamIdx, natCode, flagA, flagB, flagC, points, wins, podiums, leader }) => {
   const team = teams[teamIdx];
   const pct = (points / leader) * 100;
   const highlighted = pos === 1;
@@ -17,7 +17,7 @@ const StandingRow = ({ pos, name, teamIdx, flagA, flagB, flagC, points, wins, po
       </td>
       <td style={{ padding: '18px 12px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <Flag a={flagA} b={flagB} c={flagC} />
+          <Flag code={natCode} />
           <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--fg)' }}>{name}</div>
         </div>
       </td>
@@ -87,24 +87,28 @@ export const Standings = () => {
       {/* Leader strip */}
       <div style={{ padding: '40px 32px 32px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 24 }}>
+          {(() => { const d = wdcStandings[0]; const t = teams[d.teamIdx]; const p2 = wdcStandings[1].points; return (
           <div style={{ padding: '28px 32px', borderRadius: 12, background: '#1F1F27', color: '#fff', position: 'relative', overflow: 'hidden' }}>
-            <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: 4, background: 'var(--accent)' }} />
+            <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: 4, background: t.color }} />
             <div style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.55)', marginBottom: 12 }}>Championship leader</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-              <div style={{ width: 72, height: 72, borderRadius: '50%', background: 'repeating-linear-gradient(135deg, #24242c 0 8px, #1a1a20 8px 16px)', flexShrink: 0 }} />
+              <div style={{ width: 72, height: 72, borderRadius: '50%', overflow: 'hidden', background: '#2a2a32', flexShrink: 0 }}>
+                <img src={`https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/d_common:f1:2026:fallback:driver:2026fallbackdriverright.webp/v1740000001/common/f1/2026/mercedes/andant01/2026mercedesandant01right.webp`} alt={d.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} onError={e => { e.currentTarget.style.display = 'none'; }} />
+              </div>
               <div style={{ flex: 1 }}>
-                <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 4 }}>Max Verstappen</div>
+                <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 4 }}>{d.name}</div>
                 <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#1E3A8A' }} /> Red Bull Racing · #1
+                  <span style={{ width: 8, height: 8, borderRadius: '50%', background: t.color }} /> {t.name} · #{d.number}
                 </div>
               </div>
               <div style={{ textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>
-                <div style={{ fontSize: 48, fontWeight: 700, letterSpacing: '-0.03em', color: 'var(--accent)', lineHeight: 1 }}>374</div>
+                <div style={{ fontSize: 48, fontWeight: 700, letterSpacing: '-0.03em', color: 'var(--accent)', lineHeight: 1 }}>{d.points}</div>
                 <div style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.55)', marginTop: 6 }}>points</div>
               </div>
             </div>
           </div>
-          {[['+72', 'Gap to P2'], ['9', 'Wins this season'], ['15', 'Podiums']].map(([n, l]) => (
+          ); })()}
+          {[[`+${wdcStandings[0].points - wdcStandings[1].points}`, 'Gap to P2'], [wdcStandings[0].wins, 'Wins this season'], [wdcStandings[0].podiums, 'Podiums']].map(([n, l]) => (
             <div key={l} style={{ padding: 28, borderRadius: 12, background: 'var(--alt-bg)', border: '1px solid var(--border)' }}>
               <div style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--muted)', marginBottom: 10 }}>{l}</div>
               <div style={{ fontSize: 40, fontWeight: 700, letterSpacing: '-0.02em', fontVariantNumeric: 'tabular-nums' }}>{n}</div>

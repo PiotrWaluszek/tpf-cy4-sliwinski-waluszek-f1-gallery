@@ -9,7 +9,7 @@ const CircuitModal = ({ circuit, onClose }) => (
       <div style={{ background: '#1F1F27', padding: '28px 32px', position: 'relative' }}>
         <button onClick={onClose} style={{ position: 'absolute', top: 16, right: 20, background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)', cursor: 'pointer', fontSize: 22, lineHeight: 1 }}>×</button>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-          <Flag a={circuit.flagA} b={circuit.flagB} c={circuit.flagC} />
+          <Flag code={circuit.natCode} />
           <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{circuit.country}</span>
           <span style={{ display: 'inline-flex', padding: '3px 9px', borderRadius: 4, fontSize: 11, fontWeight: 500, letterSpacing: '0.04em', textTransform: 'uppercase', background: circuit.type === 'Street' ? 'rgba(255,128,0,0.2)' : 'rgba(255,255,255,0.1)', color: circuit.type === 'Street' ? '#FF8000' : 'rgba(255,255,255,0.7)' }}>{circuit.type}</span>
         </div>
@@ -59,16 +59,29 @@ const CircuitCard = ({ circuit, onClick }) => {
         transition: 'all .2s',
       }}
     >
-      <div style={{ height: 160, background: 'var(--alt-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20, overflow: 'hidden' }}>
-        {circuit.img
-          ? <img src={circuit.img} alt={circuit.name} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} onError={e => { e.target.style.display = 'none'; }} />
+      <div style={{ height: 160, background: 'var(--alt-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, overflow: 'hidden' }}>
+        {(circuit.f1img || circuit.img)
+          ? <img
+              src={circuit.f1img || circuit.img}
+              alt={circuit.name}
+              style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+              onError={e => {
+                const el = e.currentTarget;
+                if (circuit.f1img && circuit.img && el.src.includes('formula1.com')) {
+                  el.src = circuit.img;
+                } else {
+                  el.style.display = 'none';
+                  el.parentElement.innerHTML = `<div style="font-size:40px;font-weight:700;color:#ccc">R${circuit.round}</div>`;
+                }
+              }}
+            />
           : <div style={{ fontSize: 40, fontWeight: 700, color: 'var(--border)' }}>R{circuit.round}</div>
         }
       </div>
       <div style={{ padding: '16px 18px 20px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-            <Flag a={circuit.flagA} b={circuit.flagB} c={circuit.flagC} />
+            <Flag code={circuit.natCode} />
             <span style={{ fontSize: 12, color: 'var(--muted)' }}>{circuit.country}</span>
           </div>
           <span style={{ fontSize: 11, color: 'var(--muted)', fontWeight: 500 }}>Rd {circuit.round}</span>

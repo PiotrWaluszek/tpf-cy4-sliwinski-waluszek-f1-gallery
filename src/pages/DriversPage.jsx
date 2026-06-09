@@ -3,16 +3,32 @@ import { Flag } from '../components/Flag';
 import { Footer } from '../components/Footer';
 import { teams, drivers } from '../data/drivers';
 
+const F1IMG = slug =>
+  `https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/d_common:f1:2026:fallback:driver:2026fallbackdriverright.webp/v1740000001/common/f1/2026/${slug}right.webp`;
+
 const PORTRAITS = {
-  'Max Verstappen':  '/drivers/verstappen.jpg',
-  'Lando Norris':    '/drivers/norris.jpg',
-  'Charles Leclerc': '/drivers/leclerc.jpg',
-  'Lewis Hamilton':  '/drivers/hamilton.jpg',
-  'Carlos Sainz':    '/drivers/sainz.jpg',
-  'Fernando Alonso': '/drivers/alonso.jpg',
-  'George Russell':  '/drivers/russell.jpg',
-  'Oscar Piastri':   '/drivers/piastri.jpg',
-  'Sergio Pérez':    '/drivers/perez.jpg',
+  'Kimi Antonelli':    F1IMG('mercedes/andant01/2026mercedesandant01'),
+  'Lewis Hamilton':    F1IMG('ferrari/lewham01/2026ferrarilewham01'),
+  'George Russell':    F1IMG('mercedes/georus01/2026mercedesgeorus01'),
+  'Charles Leclerc':   F1IMG('ferrari/chalec01/2026ferrarichalec01'),
+  'Oscar Piastri':     F1IMG('mclaren/oscpia01/2026mclarenoscpia01'),
+  'Lando Norris':      F1IMG('mclaren/lannor01/2026mclarenlannor01'),
+  'Max Verstappen':    F1IMG('redbullracing/maxver01/2026redbullracingmaxver01'),
+  'Isack Hadjar':      F1IMG('redbullracing/isahad01/2026redbullracingisahad01'),
+  'Liam Lawson':       F1IMG('racingbulls/lialaw01/2026racingbullslialaw01'),
+  'Pierre Gasly':      F1IMG('alpine/piegas01/2026alpinepiegas01'),
+  'Oliver Bearman':    F1IMG('haasf1team/olibea01/2026haasf1teamolibea01'),
+  'Franco Colapinto':  F1IMG('alpine/fracol01/2026alpinefracol01'),
+  'Arvid Lindblad':    F1IMG('racingbulls/arvlin01/2026racingbullsarvlin01'),
+  'Carlos Sainz':      F1IMG('williams/carsai01/2026williamscarsai01'),
+  'Alexander Albon':   F1IMG('williams/alealb01/2026williamsalealb01'),
+  'Esteban Ocon':      F1IMG('haasf1team/estoco01/2026haasf1teamestoco01'),
+  'Gabriel Bortoleto': F1IMG('audi/gabbor01/2026audigabbor01'),
+  'Fernando Alonso':   F1IMG('astonmartin/feralo01/2026astonmartinferalo01'),
+  'Nico Hülkenberg':   F1IMG('audi/nichul01/2026audinichul01'),
+  'Valtteri Bottas':   F1IMG('cadillac/valbot01/2026cadillacvalbot01'),
+  'Sergio Pérez':      F1IMG('cadillac/serper01/2026cadillacserper01'),
+  'Lance Stroll':      F1IMG('astonmartin/lanstr01/2026astonmartinlanstr01'),
 };
 
 const DriverModal = ({ driver, onClose }) => {
@@ -33,7 +49,7 @@ const DriverModal = ({ driver, onClose }) => {
           </div>
           <div style={{ flex: 1 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
-              <Flag a={driver.flagA} b={driver.flagB} c={driver.flagC} />
+              <Flag code={driver.natCode} />
               <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{driver.nat}</span>
             </div>
             <div style={{ fontSize: 26, fontWeight: 700, color: '#fff', letterSpacing: '-0.02em' }}>{driver.name}</div>
@@ -88,7 +104,7 @@ const DriverCard = ({ driver, onClick }) => {
         <div style={{ position: 'absolute', top: 10, right: 12, fontSize: 44, fontWeight: 800, color: team.color, letterSpacing: '-0.04em', fontVariantNumeric: 'tabular-nums', textShadow: '0 2px 8px rgba(0,0,0,0.4)' }}>{driver.number}</div>
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 60, background: 'linear-gradient(transparent, rgba(0,0,0,0.6))' }} />
         <div style={{ position: 'absolute', bottom: 10, left: 14, display: 'flex', alignItems: 'center', gap: 4 }}>
-          <Flag a={driver.flagA} b={driver.flagB} c={driver.flagC} />
+          <Flag code={driver.natCode} />
         </div>
       </div>
       <div style={{ padding: '14px 16px 18px' }}>
@@ -128,7 +144,7 @@ export const DriversPage = () => {
         </div>
         <div style={{ fontSize: 64, fontWeight: 700, letterSpacing: '-0.03em', marginBottom: 14 }}>Kierowcy</div>
         <div style={{ fontSize: 18, color: 'var(--muted)', maxWidth: 560, lineHeight: 1.5 }}>
-          Pełne profile wszystkich 20 kierowców startujących w sezonie 2026.
+          Pełne profile wszystkich 22 kierowców startujących w sezonie 2026.
         </div>
       </div>
 
