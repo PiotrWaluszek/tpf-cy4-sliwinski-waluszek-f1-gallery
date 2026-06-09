@@ -2,88 +2,110 @@
 
 Projekt zaliczeniowy z przedmiotu **Techniki Projektowania Frontendowego**, Politechnika Krakowska, 2026.
 
-Autorzy: Piotr Waluszek, Sliwinski
+**Autorzy:** Piotr Waluszek, Śliwiński
+
+**Deploy:** https://tpf-cy4-sliwinski-waluszek-f1-galle.vercel.app
+
+---
+
+## Zrealizowane wymagania
+
+| Wymaganie | Status |
+|-----------|--------|
+| Odwzorowanie prototypu (9 ekranów) | ✅ |
+| Każdy ekran dostępny przez React Router | ✅ |
+| Widoki podzielone na komponenty w `/pages` | ✅ |
+| Powtarzające się elementy wydzielone do `/components` | ✅ |
+| Aplikacja ostylowana i czytelna wizualnie | ✅ |
+| Logowanie Firebase Authentication (Email/Password) | ✅ |
+| Chroniona trasa `/profile` | ✅ |
+| Hotjar / Contentsquare — analiza zachowań użytkowników | ✅ |
+| Google Analytics — śledzenie odsłon i zdarzeń | ✅ |
+| Deploy na Vercel | ✅ |
 
 ---
 
 ## Screenshoty aplikacji
 
-> **Uwaga:** Zamieść tu screenshoty przed oddaniem. Zrób je uruchamiając `npm run dev`.
+### Strona główna (`/`)
+![Home](screeny/Screenshot%202026-06-10%20at%2000.22.41.png)
 
-| Strona | Opis |
-|--------|------|
-| `/` | Strona główna — hero, highlights sezonu, tory |
-| `/login` | Formularz logowania / rejestracji |
-| `/drivers` | Grid wszystkich 20 kierowców z filtrami |
-| `/circuits` | Karty torów z mapami (23 tory) |
-| `/results` | Wyniki wyścigów + klasyfikacja konstruktorów |
-| `/standings` | Klasyfikacja kierowców WDC |
-| `/gallery` | Galeria zdjęć — dodawanie i przeglądanie |
-| `/profile` | Profil użytkownika (chroniona trasa) |
+### Strona główna — Circuit of the Week
+![Home Circuit](screeny/Screenshot%202026-06-10%20at%2000.22.46.png)
 
----
+### Strona główna — Drivers to Watch
+![Home Drivers](screeny/Screenshot%202026-06-10%20at%2000.22.49.png)
 
-## Jak uruchomić lokalnie
+### Tory wyścigowe (`/circuits`)
+![Circuits](screeny/Screenshot%202026-06-10%20at%2000.22.57.png)
 
-```bash
-git clone <repo-url>
-cd tpf-cy4-sliwinski-waluszek-f1-gallery
-npm install
-```
+### Kierowcy (`/drivers`)
+![Drivers](screeny/Screenshot%202026-06-10%20at%2000.23.01.png)
 
-Uzupełnij plik `.env` (skopiuj wartości z Firebase Console i platform analitycznych):
+### Wyniki (`/results`)
+![Results](screeny/Screenshot%202026-06-10%20at%2000.23.03.png)
 
-```env
-VITE_FIREBASE_API_KEY=twój-klucz
-VITE_FIREBASE_AUTH_DOMAIN=projekt.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=projekt-id
-VITE_FIREBASE_STORAGE_BUCKET=projekt.appspot.com
-VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
-VITE_FIREBASE_APP_ID=1:123456789:web:abc123
+### Klasyfikacja (`/standings`)
+![Standings](screeny/Screenshot%202026-06-10%20at%2000.23.07.png)
 
-VITE_HOTJAR_SITE_ID=1234567
-VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
-```
+### Galeria (`/gallery`)
+![Gallery](screeny/Screenshot%202026-06-10%20at%2000.23.13.png)
 
-```bash
-npm run dev
-```
-
-Otwórz [http://localhost:5173](http://localhost:5173)
+### Logowanie (`/login`)
+![Login](screeny/Screenshot%202026-06-10%20at%2000.23.27.png)
 
 ---
 
-## Konfiguracja Firebase
+## Google Analytics
 
-1. Utwórz projekt na [firebase.google.com](https://console.firebase.google.com)
-2. Dodaj aplikację webową → skopiuj config do `.env`
-3. Firebase Console → Authentication → Sign-in method → **Email/Password** → Włącz
-4. Po deploymencie: Authentication → Settings → Authorized domains → dodaj domenę
+Aplikacja integruje Google Analytics 4 (Measurement ID: `G-M9YJL63MWH`) z śledzeniem odsłon przy każdej zmianie trasy w React Router za pomocą komponentu `AnalyticsListener`.
 
----
-
-## Konfiguracja Hotjar
-
-1. Zarejestruj się na [hotjar.com](https://www.hotjar.com)
-2. Dodaj nowy site → skopiuj **Site ID** do `VITE_HOTJAR_SITE_ID`
-
-## Konfiguracja Google Analytics
-
-1. Utwórz property w [analytics.google.com](https://analytics.google.com)
-2. Admin → Data Streams → Web → skopiuj **Measurement ID** (`G-XXXXXXXXXX`) do `.env`
+### Panel Google Analytics — dane w czasie rzeczywistym
+![Google Analytics Real-time](screeny/Screenshot%202026-06-10%20at%2000.21.38.png)
 
 ---
 
-## Deploy (Railway / Vercel / Netlify)
+## Hotjar / Contentsquare
 
-Zalecany: **Vercel** lub **Netlify** — „one-click deploy" obsługują Vite out-of-the-box.
+Aplikacja integruje Contentsquare (dawny Hotjar, Site ID: `870048`) inicjalizowany w `App.jsx`. Narzędzie zbiera dane o zachowaniach użytkowników: nagrania sesji, mapy ciepła oraz metryki wydajności.
 
-1. Wypchnij kod na GitHub
-2. Połącz repo z Vercel/Netlify
-3. Ustaw zmienne środowiskowe (te same co w `.env`)
-4. Deploy uruchomi się automatycznie
+### Contentsquare — RUM Core Web Vitals
+![Hotjar RUM](screeny/Screenshot%202026-06-10%20at%2000.21.10.png)
 
-Alternatywnie: [Railway](https://railway.app) — patrz `https://docs.railway.com/guides/react`
+### Contentsquare — Key Performance Metrics
+![Hotjar KPI](screeny/Screenshot%202026-06-10%20at%2000.21.30.png)
+
+---
+
+## Firebase Authentication
+
+Logowanie i rejestracja przez Email/Password. Zarejestrowane konta widoczne w Firebase Console.
+
+### Firebase — użytkownicy
+![Firebase Auth](screeny/Screenshot%202026-06-10%20at%2000.21.50.png)
+
+---
+
+## Deploy — Vercel
+
+Aplikacja wdrożona na Vercel z automatycznym deployem po każdym pushu na gałąź `main`.
+
+### Vercel — szczegóły deploymentu
+![Vercel Deploy](screeny/Screenshot%202026-06-10%20at%2000.22.22.png)
+
+### Vercel — zmienne środowiskowe
+![Vercel Env Vars](screeny/Screenshot%202026-06-10%20at%2000.22.29.png)
+
+---
+
+## Technologie
+
+- **React 18** + Vite
+- **React Router v6** — routing SPA
+- **Firebase Authentication** — logowanie Email/Password
+- **react-ga4** — Google Analytics 4
+- **@hotjar/browser** — Contentsquare (Hotjar)
+- **Vercel** — hosting i CI/CD
 
 ---
 
@@ -92,22 +114,21 @@ Alternatywnie: [Railway](https://railway.app) — patrz `https://docs.railway.co
 ```
 src/
 ├── components/
-│   ├── AnalyticsListener.jsx  ← Google Analytics page tracking
-│   ├── Button.jsx             ← Reużywalny przycisk
-│   ├── DriverCard.jsx         ← Karta kierowcy
-│   ├── Flag.jsx               ← Flaga kraju
-│   ├── Footer.jsx             ← Stopka
-│   ├── Nav.jsx                ← Nawigacja z auth state
-│   ├── PrivateRoute.jsx       ← Chroniona trasa
-│   └── Stripe.jsx             ← Placeholder obrazka
+│   ├── AnalyticsListener.jsx  ← śledzenie odsłon GA przy zmianie trasy
+│   ├── Button.jsx             ← reużywalny przycisk z wariantami
+│   ├── DriverCard.jsx         ← karta kierowcy
+│   ├── Flag.jsx               ← flaga kraju
+│   ├── Footer.jsx             ← stopka
+│   ├── Nav.jsx                ← nawigacja z obsługą stanu auth
+│   └── PrivateRoute.jsx       ← chroniona trasa (wymaga zalogowania)
 ├── context/
-│   └── AuthContext.jsx        ← Firebase Auth context
+│   └── AuthContext.jsx        ← kontekst Firebase Auth
 ├── data/
-│   ├── circuits.js            ← 23 tory wyścigowe
-│   ├── drivers.js             ← 20 kierowców
-│   └── results.js             ← Wyniki 7 wyścigów
+│   ├── circuits.js            ← 22 tory wyścigowe
+│   ├── drivers.js             ← 22 kierowców
+│   └── results.js             ← wyniki 7 wyścigów
 ├── firebase/
-│   └── config.js              ← Konfiguracja Firebase
+│   └── config.js              ← konfiguracja Firebase
 └── pages/
     ├── CircuitsPage.jsx       ← /circuits
     ├── DriversPage.jsx        ← /drivers
@@ -115,34 +136,54 @@ src/
     ├── Home.jsx               ← /
     ├── LoginPage.jsx          ← /login
     ├── NotFoundPage.jsx       ← /* (404)
-    ├── ProfilePage.jsx        ← /profile (protected)
+    ├── ProfilePage.jsx        ← /profile (chroniona)
     ├── ResultsPage.jsx        ← /results
     └── Standings.jsx          ← /standings
 ```
 
 ---
 
-## Checklist projektu
+## Routing
 
-- [x] Aplikacja odwzorowuje prototyp (9 ekranów)
-- [x] Każdy ekran dostępny przez React Router
-- [x] Widoki podzielone na komponenty w `/pages`
-- [x] Powtarzające się elementy wydzielone do `/components`
-- [x] Aplikacja ostylowana i czytelna wizualnie (design system F1)
-- [x] Logowanie Firebase Authentication (Email/Password + rejestracja)
-- [x] Chronione trasy (`/profile`)
-- [x] Wylogowanie
-- [x] Hotjar — integracja w `App.jsx`
-- [x] Google Analytics — integracja z `AnalyticsListener`
-- [ ] Deploy — patrz sekcja powyżej
-- [ ] Screenshoty — do uzupełnienia po deploymencie
+Wszystkie ekrany dostępne przez React Router bez przeładowania strony:
+
+| Ścieżka | Komponent | Opis |
+|---------|-----------|------|
+| `/` | `Home` | Strona główna |
+| `/login` | `LoginPage` | Logowanie i rejestracja |
+| `/circuits` | `CircuitsPage` | Tory wyścigowe |
+| `/drivers` | `DriversPage` | Kierowcy |
+| `/results` | `ResultsPage` | Wyniki wyścigów |
+| `/standings` | `Standings` | Klasyfikacja kierowców |
+| `/gallery` | `GalleryPage` | Galeria zdjęć |
+| `/profile` | `ProfilePage` | Profil użytkownika (chroniona) |
+| `*` | `NotFoundPage` | Strona 404 |
 
 ---
 
-## Zrzuty ekranu Google Analytics
+## Jak uruchomić lokalnie
 
-> Zamieść tutaj screenshoty z panelu GA po skonfigurowaniu i wygenerowaniu ruchu.
+```bash
+git clone https://github.com/PiotrWaluszek/tpf-cy4-sliwinski-waluszek-f1-gallery.git
+cd tpf-cy4-sliwinski-waluszek-f1-gallery
+npm install
+```
 
-## Zrzuty ekranu Hotjar
+Utwórz plik `.env` i uzupełnij wartości:
 
-> Zamieść tutaj screenshoty z heatmap/nagrań Hotjar.
+```env
+VITE_FIREBASE_API_KEY=...
+VITE_FIREBASE_AUTH_DOMAIN=...
+VITE_FIREBASE_PROJECT_ID=...
+VITE_FIREBASE_STORAGE_BUCKET=...
+VITE_FIREBASE_MESSAGING_SENDER_ID=...
+VITE_FIREBASE_APP_ID=...
+VITE_HOTJAR_SITE_ID=870048
+VITE_GA_MEASUREMENT_ID=G-M9YJL63MWH
+```
+
+```bash
+npm run dev
+```
+
+Otwórz http://localhost:5173
